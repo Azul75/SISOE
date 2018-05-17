@@ -26,8 +26,12 @@
 			<a class="nav-link lead" href="<?= $helper->url("/") ?>">Inicio<span class="sr-only">(current)</span></a>
 			</li><?php
 			if($auth->check()) { ?>
-				<li class="nav-item">
-					<a class="nav-link lead" href="<?= $helper->url("/mis-eventos") ?>">Mis Eventos</a>
+				<li class="nav-item"> <?php
+					if($auth->isAdmin()) { ?>
+						<a class="nav-link lead" href="<?= $helper->url("/mis-eventos") ?>">Eventos</a> <?php
+					} else  { ?>
+						<a class="nav-link lead" href="<?= $helper->url("/mis-eventos") ?>">Mis Eventos</a> <?php
+					} ?>
 				</li> <?php
 			}
 			if($auth->isAdmin()) { ?>

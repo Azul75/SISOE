@@ -1,6 +1,10 @@
 <div class="row text-white">
-<div class="col-8 align-self-right">
-    <h2 class="display-4 text-center text-muted">Mis Eventos</h2>
+<div class="col-8 align-self-right"> <?php
+    if($auth->isAdmin()) { ?>
+        <h2 class="display-4 text-center text-muted">Eventos del sistema</h2> <?php
+    } else { ?>
+        <h2 class="display-4 text-center text-muted">Mis Eventos</h2> <?php
+    } ?>
 </div>
 <div class="col-4 align-self-center text-center">
     <a class="btn btn-dark" href="<?= $helper->url("/eventos/nuevo") ?>" role="button">Crear nuevo Evento</a>

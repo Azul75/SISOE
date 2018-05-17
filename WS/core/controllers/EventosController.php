@@ -38,30 +38,51 @@ class EventosController extends ControllerManager {
     
     private function getMisEventos() {
         global $db, $auth, $helper;
-        $idEvento = $db->query("SELECT Eventos_idEvento from personas_has_eventos where Personas_idPersona={$auth->get('idPersona')}");
-        if($idEvento['code'] === "ok" && count($idEvento['response']) > 0) {
-            $deventos = [];
-            foreach($idEvento['response'] as $ie) {
-                $rid = $ie['Eventos_idEvento'];
-                $eventos = $db->query("SELECT * from eventos where idEvento={$rid}");
-                if(count($eventos['response']) > 0) {
-                    foreach($eventos['response'] as $eid => $evento) {
-                        $idSalon = $db->query("SELECT Salones_idSalon from eventos_has_salones where Eventos_idEvento={$evento['idEvento']}");
-                        if($idSalon['code'] === "ok" && count($idSalon['response']) > 0) {
-                            $idSalon = $idSalon['response'][0]['Salones_idSalon'];
-                            $osalon = $db->query("SELECT Nombre from salones where idSalon={$idSalon}");
-                            if($osalon['code'] === "ok" && count($osalon['response']) > 0) {
-                                $salon = $osalon['response'][0]['Nombre'];
+        if(!$auth->isAdmin()) {
+            $idEvento = $db->query("SELECT Eventos_idEvento from personas_has_eventos where Personas_idPersona={$auth->get('idPersona')}");
+            if($idEvento['code'] === "ok" && count($idEvento['response']) > 0) {
+                $deventos = [];
+                foreach($idEvento['response'] as $ie) {
+                    $rid = $ie['Eventos_idEvento'];
+                    $eventos = $db->query("SELECT * from eventos where idEvento={$rid}");
+                    if(count($eventos['response']) > 0) {
+                        foreach($eventos['response'] as $eid => $evento) {
+                            $idSalon = $db->query("SELECT Salones_idSalon from eventos_has_salones where Eventos_idEvento={$evento['idEvento']}");
+                            if($idSalon['code'] === "ok" && count($idSalon['response']) > 0) {
+                                $idSalon = $idSalon['response'][0]['Salones_idSalon'];
+                                $osalon = $db->query("SELECT Nombre from salones where idSalon={$idSalon}");
+                                if($osalon['code'] === "ok" && count($osalon['response']) > 0) {
+                                    $salon = $osalon['response'][0]['Nombre'];
+                                } else {$salon = "undefined"; }
                             } else {$salon = "undefined"; }
-                        } else {$salon = "undefined"; }
-                        $eventos['response'][$eid]['salon'] = $salon;
-                    }
-                } else {$eventos = [];}
-                $deventos[] = $eventos['response'][0];
+                            $eventos['response'][$eid]['salon'] = $salon;
+                        }
+                    } else {$eventos = [];}
+                    $deventos[] = $eventos['response'][0];
+                }
+            } else {
+                $deventos = [];
             }
         } else {
-            $deventos = [];
+            $eventos = $db->query("SELECT * from eventos");
+            if(count($eventos['response']) > 0) {
+                foreach($eventos['response'] as $eid => $evento) {
+                    $idSalon = $db->query("SELECT Salones_idSalon from eventos_has_salones where Eventos_idEvento={$evento['idEvento']}");
+                    if($idSalon['code'] === "ok" && count($idSalon['response']) > 0) {
+                        $idSalon = $idSalon['response'][0]['Salones_idSalon'];
+                        $osalon = $db->query("SELECT Nombre from salones where idSalon={$idSalon}");
+                        if($osalon['code'] === "ok" && count($osalon['response']) > 0) {
+                            $salon = $osalon['response'][0]['Nombre'];
+                        } else {$salon = "undefined"; }
+                    } else {$salon = "undefined"; }
+                    $eventos['response'][$eid]['salon'] = $salon;
+                }
+            } else {$eventos = [];}
+            foreach ($eventos['response'] as $key => $ev) {
+                $deventos[] = $ev;
+            }
         }
+        
         return $deventos;
     }
 
