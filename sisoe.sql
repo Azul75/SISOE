@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2018 a las 03:21:21
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Tiempo de generación: 17-05-2018 a las 22:42:18
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,10 +46,10 @@ CREATE TABLE `direccion` (
 
 INSERT INTO `direccion` (`idDireccion`, `Calle`, `NumeroExt`, `NumeroInt`, `Colonia`, `Municipio`, `Estado`, `Pais`, `CodigoPostal`) VALUES
 (0000000001, 'Alcachofa', '256', '', 'El Pitirancho', 'Puerto Vallarta', 'Jalisco', 'Mexico', 48290),
-(0000000002, 'Gladiola', '234', '', 'La Floresta', 'Puerto Vallarta', 'Jalisco', 'Mexico', 34567),
+(0000000002, 'Tulipan', '1270', '', 'La Floresta', 'Puerto Vallarta', 'Jalisco', 'Mexico', 48290),
 (0000000003, 'Tulipan', '1270', '', 'La Floresta', 'Puerto Vallarta', 'Jalisco', 'Mexico', 48290),
-(0000000004, 'Azucena', '456', '', 'La Floresta', 'Puerto Vallarta', 'Jalisco', 'Mexico', 48290),
-(0000000005, 'Hidalgo', '23', 'A', 'Educacion', 'Puerto Vallarta', 'Jalisco', 'Mexico', 48831);
+(0000000004, 'Tulipan', '1270', '', 'La Floresta', 'Puerto Vallarta', 'Jalisco', 'Mexico', 48290),
+(0000000005, 'Gladiola', '234', '', 'La Floresta', 'Puerto Vallarta', 'Jalisco', 'Mexico', 34567);
 
 -- --------------------------------------------------------
 
@@ -72,9 +72,52 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`idEvento`, `Nombre`, `Tipo`, `Cronograma`, `FechaInicio`, `FechaFin`, `Asistentes`) VALUES
-(1, 'Boda de Juan y Claudia', 'Boda', '<p style=\"text-align: center;\"><strong>Programa de la Boda</strong></p>\r\n<p style=\"text-align: left;\">18:00 Misa en la catedral</p>\r\n<p style=\"text-align: left;\">19:30 Sesion de fotografia</p>\r\n<p style=\"text-align: left;\">20:30 Ingreso al salon y Brindis con los Padrinos</p>\r\n<p style=\"text-align: left;\">21:00 Cena</p>\r\n<p style=\"text-align: left;\">22:00 Apertura del baile</p>\r\n<p style=\"text-align: left;\">01:30 despedida.</p>', '2018-05-16 18:00:00', '2018-05-17 02:00:00', 'Jose Luis Gutierrez Padilla - Padrino\r\nJose Perez Duran - Invitado familiar de la novia\r\nAlberto suarez Rodriguez - Invitado familiar del novio\r\nCristina Acevedo Juarez - Invitada amante del novio\r\nSusana Cervantes - Invitada familiar de la novia'),
-(2, 'Seminario sobre IngenierÃ­a de Software', 'Taller', '<p><strong>Programa de actividades</strong></p>\r\n<p>&nbsp;</p>\r\n<p><em>DIAS MARTES Y JUEVES:</em></p>\r\n<p>15:00 a 16:00 clases teoricas</p>\r\n<p>16:00 a 17:00 practicas de taller</p>\r\n<p>&nbsp;</p>\r\n<p>ULTIMA SEMANA ENTREGA DE PROYECTOS</p>', '2018-01-15 15:00:00', '2018-05-22 15:00:00', 'Participantes:\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588\r\nIng. Sofia Alcazar VÃ©lez - Empresa: Soft-Inc. - telefono de contacto: 3221996588'),
-(3, 'Uso del Algebra Lineal en la ProgramaciÃ³n', 'Curso', '<p><strong>Programa</strong></p>\r\n<p>15:00 - Inicio del Curso y Presentaci&oacute;n.</p>\r\n<p>16:00 - Explicaci&oacute;n del tema.</p>\r\n<p>17:00 - Preguntas y Respuestas.</p>\r\n<p>17:30 - Examen de conocimientos.</p>\r\n<p>18:00 - Fin de Curso y Despedida.</p>', '2018-05-13 15:00:00', '2018-05-15 18:00:00', 'Estudiantes:\r\nAlberto Lopez Suazo\r\nCornelio Rodriguez Lepe\r\nAlejandra Dorantes Loza\r\nHeriberto Machado Duran\r\nGeorgina Lopez Lopez\r\nMiguel Cervantes Duarte\r\nCristian Olvera Prado');
+(1, 'Convencion de Anime', 'ConvenciÃ³n', '<p style=\"text-align: center;\"><strong>Esto es un ejemplo de un cronograma.</strong></p>', '2018-05-01 04:12:25', '2018-05-31 11:47:33', 'Jose\r\nAlexis\r\nJuan Carlos'),
+(2, 'Bautizo Ruben', 'Familiar', 'Esto es otro ejemplo de un cronograma', '2018-05-17 00:00:00', '2018-05-31 00:00:00', 'Jesus\r\nJose\r\nMaria\r\nPepe\r\nLupita'),
+(3, 'Baile de find e curso', 'ReuniÃ³n', '<p style=\"text-align: center;\"><strong>Esto es un cronograma</strong></p>', '2018-05-02 04:23:27', '2018-05-26 02:10:00', 'Jose\r\nPepe\r\nMaria\r\nJuan\r\nJulian\r\nSandra\r\nVictoria'),
+(4, 'Esto se borrara', 'Final', 'Hola', '2018-05-31 00:00:00', '2018-06-28 00:00:00', 'hola\r\njeje\r\nesto\r\nse\r\nborrara'),
+(5, 'Fin del pinchi mundo por Thanos alv', 'Mesa Redonda', '<h2 style=\"text-align: center;\">El fin del mundo esta aqui.</h2>\r\n<p style=\"text-align: center;\">Han sus maletas por que papi tanos nos va a llevar de paseo.... AL PINCHI INFIERNOOO ALVVVVV!</p>', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Jose Luis\r\nPeppe\r\nkfjsfm'),
+(9, 'Test', 'Bautizo', '<h1 style=\"text-align: center;\"><strong>TEST</strong></h1>', '2018-05-01 15:16:00', '2018-06-01 16:19:00', 'Jose\r\nPepe\r\nPedro'),
+(10, 'Test', 'Bautizo', '<h1 style=\"text-align: center;\"><strong>TEST</strong></h1>', '2018-05-01 15:16:00', '2018-06-01 16:19:00', 'Jose\r\nPepe\r\nPedro'),
+(11, 'Test', 'Bautizo', '<h1 style=\"text-align: center;\"><strong>TEST</strong></h1>', '2018-05-01 15:16:00', '2018-06-01 16:19:00', 'Jose\r\nPepe\r\nPedro'),
+(12, 'Test', 'Bautizo', '<h1 style=\"text-align: center;\"><strong>TEST</strong></h1>', '2018-05-01 15:16:00', '2018-06-01 16:19:00', 'Jose\r\nPepe\r\nPedro'),
+(13, 'Test', 'Bautizo', '<h1 style=\"text-align: center;\"><strong>TEST</strong></h1>', '2018-05-01 15:16:00', '2018-06-01 16:19:00', 'Jose\r\nPepe\r\nPedro'),
+(15, 'Holi', 'Aniversario', '<p>Hola ;)</p>\r\n<p>&hearts;</p>', '2018-05-17 03:05:00', '2018-06-02 05:00:00', 'Jose\r\nPepe\r\nPedro'),
+(17, 'Incio de curso', 'Taller', '<p>Inicio de <strong>curso</strong>.</p>', '2018-01-08 14:14:00', '2018-07-18 17:00:00', 'Jose\r\nPedro\r\nPablo'),
+(18, 'Pepe el Toro es inocente', 'Debate', '<p style=\"text-align: center;\">CRONOGRAMA DE ACTIVIDADES</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 11.3803%; text-align: center;\">hora</td>\r\n<td style=\"width: 38.6197%; text-align: center;\">actividad</td>\r\n<td style=\"width: 25%; text-align: center;\">a cargo</td>\r\n<td style=\"width: 25%; text-align: center;\">lugar</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 11.3803%; text-align: center;\">00:00</td>\r\n<td style=\"width: 38.6197%; text-align: center;\">Linchamiento</td>\r\n<td style=\"width: 25%; text-align: center;\">yo</td>\r\n<td style=\"width: 25%; text-align: center;\">centro del salon</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 11.3803%; text-align: center;\">02:00</td>\r\n<td style=\"width: 38.6197%; text-align: center;\">Brindis por el fallecimiento</td>\r\n<td style=\"width: 25%; text-align: center;\">tu</td>\r\n<td style=\"width: 25%; text-align: center;\">que te importa</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 11.3803%; text-align: center;\">04:00</td>\r\n<td style=\"width: 38.6197%; text-align: center;\">Borrachera</td>\r\n<td style=\"width: 25%; text-align: center;\">Todos</td>\r\n<td style=\"width: 25%; text-align: center;\">Aqui mismo</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 11.3803%; text-align: center;\">06:00</td>\r\n<td style=\"width: 38.6197%; text-align: center;\">fin del debate</td>\r\n<td style=\"width: 25%; text-align: center;\">yo</td>\r\n<td style=\"width: 25%; text-align: center;\">aqui mismo</td>\r\n</tr>\r\n</tbody>\r\n</table>', '2018-05-12 00:00:00', '2018-05-13 13:05:00', 'Jose Lopez\r\nAndres Perez\r\nAlejandro Loaiza\r\nErnesto Rojas\r\nPedro Limon'),
+(19, 'jajaja', 'GraduaciÃ³n', '<p>seeee</p>', '2018-05-13 13:00:00', '2018-05-15 18:00:00', 'solo yo'),
+(20, 'El proyecto reprobado', 'Seminario', '<table style=\"border-collapse: collapse; width: 100%; height: 90px;\" border=\"1\">\r\n<tbody>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 14.8689%; text-align: center; height: 18px;\"><strong>Hora</strong></td>\r\n<td style=\"width: 51.7977%; text-align: center; height: 18px;\"><strong>Actividad</strong></td>\r\n<td style=\"width: 33.3333%; text-align: center; height: 18px;\"><strong>a cargo</strong></td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 14.8689%; text-align: center; height: 18px;\">13:00</td>\r\n<td style=\"width: 51.7977%; text-align: center; height: 18px;\">Revision de Proyecto</td>\r\n<td style=\"width: 33.3333%; text-align: center; height: 18px;\">La Maestra</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 14.8689%; text-align: center; height: 18px;\">14:00</td>\r\n<td style=\"width: 51.7977%; text-align: center; height: 18px;\">Rega&ntilde;ada al alumno</td>\r\n<td style=\"width: 33.3333%; text-align: center; height: 18px;\">La Maestra</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 14.8689%; text-align: center; height: 18px;\">15:00</td>\r\n<td style=\"width: 51.7977%; text-align: center; height: 18px;\">Sentencia</td>\r\n<td style=\"width: 33.3333%; text-align: center; height: 18px;\">La Maestra</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 14.8689%; text-align: center; height: 18px;\">16:00</td>\r\n<td style=\"width: 51.7977%; text-align: center; height: 18px;\">Lloradera, suplicas y rezos</td>\r\n<td style=\"width: 33.3333%; text-align: center; height: 18px;\">El alumno</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 14.8689%; text-align: center;\">17:00</td>\r\n<td style=\"width: 51.7977%; text-align: center;\">Ejecuci&oacute;n de la sentencia</td>\r\n<td style=\"width: 33.3333%; text-align: center;\">La Mestra</td>\r\n</tr>\r\n</tbody>\r\n</table>', '2018-05-12 13:00:00', '2018-05-13 18:30:00', 'La Maestra\r\nEl Alumno 1\r\nEl Alumno 2\r\nEl Alumno 3\r\nEl Alumno 4\r\nEl EJECUTOR\r\n\r\n');
+
+--
+-- Disparadores `eventos`
+--
+DELIMITER $$
+CREATE TRIGGER `RespaldoEventos` BEFORE DELETE ON `eventos` FOR EACH ROW INSERT INTO eventos_borrados VALUES (OLD.idEvento, OLD.Nombre, OLD.Tipo, OLD.Cronograma, OLD.FechaInicio, OLD.FechaFin, OLD.Asistentes)
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `eventos_borrados`
+--
+
+CREATE TABLE `eventos_borrados` (
+  `idEvento` int(11) NOT NULL,
+  `Nombre` varchar(120) DEFAULT NULL,
+  `Tipo` varchar(45) DEFAULT NULL,
+  `Cronograma` longtext,
+  `FechaInicio` datetime DEFAULT NULL,
+  `FechaFin` datetime DEFAULT NULL,
+  `Asistentes` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `eventos_borrados`
+--
+
+INSERT INTO `eventos_borrados` (`idEvento`, `Nombre`, `Tipo`, `Cronograma`, `FechaInicio`, `FechaFin`, `Asistentes`) VALUES
+(16, 'Fin de curso', 'GraduaciÃ³n', '<p>Fin de curso muchachotes!!!</p>', '2018-05-24 17:40:00', '2018-06-02 18:50:00', 'Jose\r\nPedro\r\nPablo');
 
 -- --------------------------------------------------------
 
@@ -93,8 +136,18 @@ CREATE TABLE `eventos_has_salones` (
 
 INSERT INTO `eventos_has_salones` (`Eventos_idEvento`, `Salones_idSalon`) VALUES
 (1, 1),
+(1, 2),
+(2, 1),
 (2, 2),
-(3, 3);
+(3, 3),
+(17, 3),
+(18, 1),
+(18, 2),
+(18, 3),
+(19, 2),
+(19, 3),
+(20, 1),
+(20, 2);
 
 -- --------------------------------------------------------
 
@@ -120,9 +173,9 @@ CREATE TABLE `personas` (
 --
 
 INSERT INTO `personas` (`idPersona`, `Nombres`, `Apellidos`, `Correo`, `Contrasena`, `Empresa`, `Direccion_idDireccion`, `Telefono`, `RFC`, `Tipo`) VALUES
-(1, 'Admin', 'System', 'adminsys@gmail.com', '$2y$10$VWR7ncgAsCX6ae6zWtoOe.FG6OSM655xLQyKCDmg8YFWdnZi6TH4.', 'NidiaSoft', 0000000001, 322115450, '1234567890-EXS', 0),
-(2, 'Jose Luis', 'Gutierrez', 'jose_luis@gmail.com', '$2y$10$z6udqWhxEPICEJ7Xzf0S9ekekCW8/uPbMQST2RrGYJox/dn2bUCnW', 'Universidad del Llano', 0000000004, 322115450, 'GUPL750118-DUO', 1),
-(3, 'Ernesto Alejandro', 'Zapata Suarez', 'plcom@info.com', '$2y$10$0UPxIipjKooNcvcKeG4yjuJ9xaMFx7Jqokkpj7zxKpVROTF1f/17C', 'Plasticos y Complementos S.A.', 0000000005, 2147483647, 'PLCM920612-MN', 1);
+(11, 'Admin', 'System', 'j23@gmail.com', '$2y$10$VWR7ncgAsCX6ae6zWtoOe.FG6OSM655xLQyKCDmg8YFWdnZi6TH4.', 'Pepa', 0000000003, 322115450, '1234567890abcde', 0),
+(12, 'Jose', 'Gutierrez', 'jose_luis@gmail.com', '$2y$10$VWR7ncgAsCX6ae6zWtoOe.FG6OSM655xLQyKCDmg8YFWdnZi6TH4.', 'La Otra', 0000000004, 322115450, '1234567890abcde', 1),
+(13, 'Pepe', 'el Toro', 'pepe_eltoro@gmail.com', '$2y$10$VWR7ncgAsCX6ae6zWtoOe.FG6OSM655xLQyKCDmg8YFWdnZi6TH4.', 'Juanchita', 0000000002, 322115450, '1234567890abcde', 1);
 
 -- --------------------------------------------------------
 
@@ -140,9 +193,13 @@ CREATE TABLE `personas_has_eventos` (
 --
 
 INSERT INTO `personas_has_eventos` (`Personas_idPersona`, `Eventos_idEvento`) VALUES
-(2, 1),
-(2, 2),
-(2, 3);
+(11, 1),
+(11, 2),
+(11, 3),
+(11, 17),
+(12, 18),
+(12, 19),
+(12, 20);
 
 -- --------------------------------------------------------
 
@@ -188,9 +245,9 @@ CREATE TABLE `salones` (
 --
 
 INSERT INTO `salones` (`idSalon`, `Nombre`, `Descripcion`, `Capacidad`, `Tipo`, `imagen`) VALUES
-(1, 'RubÃ­', 'Salon para eventos recreativos y sociales: aniversarios, bodas, cumpleaÃ±os, XV aÃ±os, bautismos, comuniones, conmemoraciones, graduaciones, reuniones empresariales y universitarias, shows y animaciones.', 140, 'Tipo de Salon', '{local}/assets/imagenes/rubi.jpg'),
-(2, 'Esmeralda', 'Salon para debates, paneles, mesas redondas, talleres y seminarios entre otros.', 80, 'Multiproposito', '{local}/assets/imagenes/esmeralda2.jpg'),
-(3, 'Aguamarina', 'Salon audiovisual para conferencias, simposios, congresos, convenciones, foros y cursos entre otros.', 100, 'Audiovisual', '{local}/assets/imagenes/aguamarina4.jpg');
+(1, 'RubÃ­', 'SalÃ³n para eventos recreativos y sociales: aniversarios, bodas, cumpleaÃ±os, XV aÃ±os, bautismos, comuniones, conmemoraciones, graduaciones, reuniones empresariales y universitarias, shows y animaciones.', 140, 'Festivo', '{local}/assets/imagenes/rubi.jpg'),
+(2, 'Esmeralda', 'Sal&oacute;n para debates, paneles, mesas redondas, talleres y seminarios entre otros.', 80, 'Multiproposito', '{local}/assets/imagenes/esmeralda2.jpg'),
+(3, 'Aguamarina', 'Sal&oacute;n audiovisual para conferencias, simposios, congresos, convenciones, foros y cursos entre otros.', 100, 'Audiovisual', '{local}/assets/imagenes/aguamarina4.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -206,6 +263,12 @@ ALTER TABLE `direccion`
 -- Indices de la tabla `eventos`
 --
 ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`idEvento`);
+
+--
+-- Indices de la tabla `eventos_borrados`
+--
+ALTER TABLE `eventos_borrados`
   ADD PRIMARY KEY (`idEvento`);
 
 --
@@ -251,26 +314,37 @@ ALTER TABLE `salones`
 --
 ALTER TABLE `direccion`
   MODIFY `idDireccion` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `eventos_borrados`
+--
+ALTER TABLE `eventos_borrados`
+  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
   MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `salones`
 --
 ALTER TABLE `salones`
   MODIFY `idSalon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Restricciones para tablas volcadas
 --
